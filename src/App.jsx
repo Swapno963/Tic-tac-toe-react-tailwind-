@@ -1,9 +1,43 @@
-import React from 'react'
+import React, { useState } from "react";
 
-export default function App() {
+function Square(){
+ const [value, setValue] = useState(null)
+
+    function handelClick(){
+      setValue('X')
+      console.log('clicked');
+    }
+
+  return  <button 
+  className="bg-white border border-gray-400 h-12 w-12 leading-9 text-lg m-1"
+  onClick={handelClick}
+  >
+  {value}
+</button>
+}
+
+
+export default function Board() {
   return (
-    <div>
-      <h1 className='text-3xl font-bold underline'>Hello tic tac toe</h1>
-    </div>
-  )
+    <>
+      <div className="flex">
+       <Square  />
+       <Square />
+       <Square />
+      </div>
+
+      <div className="flex">
+       <Square />
+       <Square />
+       <Square />
+      </div>
+
+      <div className="flex">
+       <Square />
+       <Square />
+       <Square />
+      </div>
+  
+    </>
+  );
 }
